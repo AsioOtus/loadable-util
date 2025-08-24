@@ -198,10 +198,6 @@ public extension LoadableValue {
 		mapValue { $0 }
 	}
 
-	func replaceWithNone () -> LoadableValue<None, Failed, LoadingTask> {
-		replaceValue(with: .init())
-	}
-
 	func replaceIfFailed (with successful: Value) -> Self {
 		if case .failed = self {
 			return .successful(successful)
